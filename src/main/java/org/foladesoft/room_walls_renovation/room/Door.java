@@ -15,6 +15,9 @@ public class Door {
 	private double height;
 
 	public Door(double width, double height) {
+		if (width <= 0 || height <= 0) {
+			throw new IllegalArgumentException("Door dimensions must be positive");
+		}
 		this.width = width;
 		this.height = height;
 	}
@@ -30,6 +33,9 @@ public class Door {
 	}
 
 	public void setWidth(double width) {
+		if (width <= 0) {
+			throw new IllegalArgumentException("Door width must be positive");
+		}
 		this.width = width;
 	}
 
@@ -38,6 +44,9 @@ public class Door {
 	}
 
 	public void setHeight(double height) {
+		if (height <= 0) {
+			throw new IllegalArgumentException("Door height must be positive");
+		}
 		this.height = height;
 	}
 	

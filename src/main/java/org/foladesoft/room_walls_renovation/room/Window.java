@@ -15,6 +15,9 @@ public class Window {
 	private double height;
 
 	public Window(double width, double height) {
+		if (width <= 0 || height <= 0) {
+			throw new IllegalArgumentException("Window dimensions must be positive");
+		}
 		this.width = width;
 		this.height = height;
 	}
@@ -30,6 +33,9 @@ public class Window {
 	}
 
 	public void setWidth(double width) {
+		if (width <= 0) {
+			throw new IllegalArgumentException("Window width must be positive");
+		}
 		this.width = width;
 	}
 
@@ -38,6 +44,9 @@ public class Window {
 	}
 
 	public void setHeight(double height) {
+		if (height <= 0) {
+			throw new IllegalArgumentException("Window height must be positive");
+		}
 		this.height = height;
 	}
 	
