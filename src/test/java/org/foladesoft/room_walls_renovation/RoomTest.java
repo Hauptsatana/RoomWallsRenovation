@@ -22,6 +22,17 @@ public class RoomTest {
 	//<editor-fold defaultstate="collapsed" desc="Exceptions">
 		
 	@Test(expected = IllegalArgumentException.class)
+	public void testExceptionWindow() {
+		Window w = new Window(10, 0);
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testExceptionDoor() {
+		Door d = new Door(3, 3);
+		d.setHeight(-1);
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
 	public void testExceptionLength() {
 		Room room = new Room(-10, 10, 2, null, null);
 	}
@@ -75,12 +86,6 @@ public class RoomTest {
 		doors.add(new Door(0.5, 0.7));
 		Room room = new Room(10, 4, 2.8, doors, null);
 		Assert.assertTrue(Math.abs(room.calcDoorArea() - 3.35) < 1e-6);
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testExceptionWindow() {
-		List<Window> windows = new ArrayList<>();
-		windows.add(new Window(10, 0));
 	}
 	
 	@Test
